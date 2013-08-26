@@ -28,11 +28,14 @@ mod.directive('editablespan', function() {
       }
 
       function bindEditElements() {        
-        input.bind('blur keyup', function(event) {
-          if(isKeyUp(event) && !isEscape(event)) {
-            return;
+        input.bind('blur', function() {
+          stopEdit();
+        });
+
+        input.bind('keyup', function(event) {
+          if(isEscape(event)) {
+            stopEdit();        
           }
-          stopEdit();        
         });
 
         form.bind('submit', function() {
@@ -66,11 +69,7 @@ mod.directive('editablespan', function() {
       }
 
       function isEscape(event) {
-        return event.originalEvent.keyCode == 27;
-      }
-
-      function isKeyUp(event) {
-        return event && event.type == "keyup";
+        return event && event.originalEvent.keyCode == 27;
       }
     }
   };
