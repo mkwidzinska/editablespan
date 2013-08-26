@@ -40,3 +40,7 @@ Attributes of the `<editablespan>` tag:
  * **on-ready**: a callback that is called after user saves a text change (presses `<ENTER>` on the input)
  * **span-class**: a CSS class that should be applied to the span element.
  * **input-class**: a CSS class that should be applied to the input element.
+
+## Example
+
+You'll find the working demo in the `example/` directory and on [JSFiddle](http://jsfiddle.net/gkwidzinska/KHttt/13/).
