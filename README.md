@@ -43,4 +43,4 @@ Attributes of the `<editablespan>` tag:
 
 ## Example
 
-You'll find the working demo in the `example/` directory and on [JSFiddle](http://jsfiddle.net/gkwidzinska/KHttt/13/).
+You'll find the working demo in the `example/` directory and on [JSFiddle](http://jsfiddle.net/gkwidzinska/KHttt/14/).
