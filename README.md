@@ -6,7 +6,7 @@ The text is contained in a span.
 After the span with the text is clicked it is replaced by a input with that text.
 User confirms changes by pressing `<ENTER>`. 
 
-## Usage:
+## Usage
 
 Include the script tag after AngularJS tag:
 
@@ -41,6 +41,6 @@ Attributes of the `<editablespan>` tag:
  * **span-class**: a CSS class that should be applied to the span element.
  * **input-class**: a CSS class that should be applied to the input element.
 
-## Example
+## Demo
 
 You'll find the working demo in the `example/` directory and on [JSFiddle](http://jsfiddle.net/gkwidzinska/KHttt/14/).
