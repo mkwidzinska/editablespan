@@ -1,11 +1,19 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+
   // Project configuration.
-  grunt.initConfig({
+  grunt.initConfig({    
     pkg: grunt.file.readJSON('package.json'),
-     uglify: {
+    meta: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+    copy: {
+      main: {
+        files: [{expand: true, cwd: 'src/', src: '*', dest: 'build/'}]
+      }
+    },
+    uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+        banner: '<%= meta.banner %>'
       },
       build: {
         src: 'build/mk-editable-span.js',
@@ -13,5 +21,5 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['copy', 'uglify']);
 };
