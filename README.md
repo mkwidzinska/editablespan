@@ -8,13 +8,20 @@ User confirms changes by pressing `<ENTER>`.
 
 ## Usage:
 
-1. In your app module, add `mk.editablespan` module to the list of dependencies:
+Include the script tag after AngularJS tag:
+
+```
+<script type="text/javascript" src="angular.min.js"></script>  
+<script type="text/javascript" src="mk-editable-span.js"></script>
+```
+
+In your app module, add `mk.editablespan` module to the list of dependencies:
 
 ```
 angular.module('yourApp', ['mk.editablespan']);
 ```
 
-2. In your html code, use a `<editablespan>` tag:
+In your html code, use a `<editablespan>` tag:
 
 ```
 <editablespan 

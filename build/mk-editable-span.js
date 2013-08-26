@@ -24,7 +24,7 @@ mod.directive('editablespan', function() {
       function startEdit() {
         bindEditElements();
         setEdit(true);
-        input.focus();
+        input[0].focus();
       }
 
       function bindEditElements() {        
@@ -69,7 +69,7 @@ mod.directive('editablespan', function() {
       }
 
       function isEscape(event) {
-        return event && event.originalEvent.keyCode == 27;
+        return event && event.keyCode == 27;
       }
     }
   };
