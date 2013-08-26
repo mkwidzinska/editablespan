@@ -36,7 +36,10 @@ mod.directive('editablespan', function() {
         });
 
         form.bind('submit', function() {
-          save();
+          // you can't save empty string
+          if(input[0].value) {
+            save();
+          }
           stopEdit(); 
         });
       }
