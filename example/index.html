@@ -1,11 +1,30 @@
 <html>
+<head>
+  <style type="text/css">
+    body { font-family: 'Arial' }
+    .info { color: blue; font-size: 11pt; margin: 5px 7px; display: inline-block; }
+    .info-input { color: green; padding-left: 3px; font-size: 11pt; }
+    .message { margin-top:20px; font-size: 9pt; }
+  </style>
+</head>
+
 <body ng-app="editApp">
-  <div ng-controller="editController">    
-    <editablespan model="myText" on-ready="onReady(myText)"></editablespan>
+  <div ng-controller="editController">
+    <div>    
+      <editablespan 
+        model="item.description" 
+        on-ready="onReady(item)" 
+        span-class="info" 
+        input-class="info-input">
+      </editablespan>
+    </div>
+
+    <div class="message"><span ng-bind="message"></span></div>
   </div>
+  
   <script type="text/javascript" src="lib/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" src="lib/angular.js"></script>  
-  <script type="text/javascript" src="../build/mk-editable-span.min.js"></script>
+  <script type="text/javascript" src="../src/mk-editable-span.js"></script>
   <script type="text/javascript" src="js/app.js"></script>  
 </body>
 </html>

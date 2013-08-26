@@ -1,9 +1,10 @@
 var app = angular.module('editApp', ['mk.editablespan']);
 
 app.controller('editController', function($scope) {
-  $scope.myText = "This is my text";
+  $scope.item = {description: "This is a new item"};
+  $scope.message = "";
 
-  $scope.onReady = function(value) {
-    console.log("controller: edit ready, " + value);
+  $scope.onReady = function(item) {
+    $scope.message = "controller: edit ready, item description: " + item.description;
   };
 });
