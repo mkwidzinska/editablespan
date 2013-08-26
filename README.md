@@ -1,0 +1,1 @@
+# Angular directive: mk.editablespan

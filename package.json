@@ -1,0 +1,15 @@
+{
+  "name": "mk.editablespan",
+  "version": "1.0.0",
+  "description": "Directive for Angular that enables editing a span.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mkwidzinska/angular-directive-editablespan.git"    
+  },
+  "author": "Gosia Kwidzinska <g.kwidzinska@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}
