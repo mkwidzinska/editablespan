@@ -3,22 +3,27 @@ var mod = angular.module('mk.editablespan', []);
 mod.directive('editablespan', function() {
   return {
     restrict: 'E',
-    template: '<div><span ng-hide="editing" ng-class="spanClass">{{text}}</span><form ng-show="editing"><input type="text" ng-class="inputClass"></form><div>',
+    template: '<div><span ng-hide="editing" ng-class="spanClass">{{text}}</span><form ng-show="editing"><input type="{{getInputType()}}" ng-class="inputClass"></form><div>',
     scope: {
       text: '=model',
       onReady: '&',
       spanClass: '@',
-      inputClass: '@'
+      inputClass: '@',
+      inputType: '@'
     },
     replace: true,
     link: function(scope, element, attrs) {
+      scope.getInputType = function() {
+        return scope.inputType || 'text';
+      };
+
       var span = angular.element(element.children()[0]);
-      var form = angular.element(element.children()[1]);  
+      var form = angular.element(element.children()[1]);
       var input = angular.element(element.children()[1][0]);
 
       span.bind('click', function(event) {
         input[0].value = scope.text;
-        startEdit();        
+        startEdit();
       });
 
       function startEdit() {
@@ -27,14 +32,14 @@ mod.directive('editablespan', function() {
         input[0].focus();
       }
 
-      function bindEditElements() {        
+      function bindEditElements() {
         input.bind('blur', function() {
           stopEdit();
         });
 
         input.bind('keyup', function(event) {
           if(isEscape(event)) {
-            stopEdit();        
+            stopEdit();
           }
         });
 
@@ -43,7 +48,7 @@ mod.directive('editablespan', function() {
           if(input[0].value) {
             save();
           }
-          stopEdit(); 
+          stopEdit();
         });
       }
 
@@ -60,7 +65,7 @@ mod.directive('editablespan', function() {
 
       function unbindEditElements() {
         input.unbind();
-        form.unbind();        
+        form.unbind();
       }
 
       function setEdit(value) {
