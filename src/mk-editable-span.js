@@ -20,6 +20,8 @@ mod.directive('editablespan', function() {
       var span = angular.element(element.children()[0]);
       var form = angular.element(element.children()[1]);
       var input = angular.element(element.children()[1][0]);
+      
+      input[0].type = scope.inputType;
 
       span.bind('click', function(event) {
         input[0].value = scope.text;
